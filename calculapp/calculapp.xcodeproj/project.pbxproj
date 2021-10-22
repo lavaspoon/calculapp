@@ -16,6 +16,8 @@
 		9ED3ADF42722E371006AF8B8 /* calculappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADF32722E371006AF8B8 /* calculappTests.swift */; };
 		9ED3ADFE2722E371006AF8B8 /* calculappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADFD2722E371006AF8B8 /* calculappUITests.swift */; };
 		9ED3AE002722E371006AF8B8 /* calculappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADFF2722E371006AF8B8 /* calculappUITestsLaunchTests.swift */; };
+		9ED3AE1027237ABE006AF8B8 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3AE0F27237ABE006AF8B8 /* CalculateViewController.swift */; };
+		9ED3AE1227237B27006AF8B8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3AE1127237B27006AF8B8 /* ChartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		9ED3ADF92722E371006AF8B8 /* calculappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED3ADFD2722E371006AF8B8 /* calculappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculappUITests.swift; sourceTree = "<group>"; };
 		9ED3ADFF2722E371006AF8B8 /* calculappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9ED3AE0F27237ABE006AF8B8 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
+		9ED3AE1127237B27006AF8B8 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,9 @@
 		9ED3ADDB2722E36E006AF8B8 /* calculapp */ = {
 			isa = PBXGroup;
 			children = (
+				9ED3AE0E2722E475006AF8B8 /* Model */,
+				9ED3AE0C2722E45F006AF8B8 /* View */,
+				9ED3AE0D2722E468006AF8B8 /* Controller */,
 				9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */,
 				9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */,
 				9ED3ADE02722E36E006AF8B8 /* ViewController.swift */,
@@ -125,6 +132,29 @@
 				9ED3ADFF2722E371006AF8B8 /* calculappUITestsLaunchTests.swift */,
 			);
 			path = calculappUITests;
+			sourceTree = "<group>";
+		};
+		9ED3AE0C2722E45F006AF8B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9ED3AE0D2722E468006AF8B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9ED3AE0F27237ABE006AF8B8 /* CalculateViewController.swift */,
+				9ED3AE1127237B27006AF8B8 /* ChartViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9ED3AE0E2722E475006AF8B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ED3ADE12722E36E006AF8B8 /* ViewController.swift in Sources */,
+				9ED3AE1027237ABE006AF8B8 /* CalculateViewController.swift in Sources */,
 				9ED3ADDD2722E36E006AF8B8 /* AppDelegate.swift in Sources */,
 				9ED3ADDF2722E36E006AF8B8 /* SceneDelegate.swift in Sources */,
+				9ED3AE1227237B27006AF8B8 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +471,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GQYLWZMATG;
+				DEVELOPMENT_TEAM = YM9MTQS82Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calculapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -452,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lavaspoon.calculapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spoonlava.calculapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,7 +499,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GQYLWZMATG;
+				DEVELOPMENT_TEAM = YM9MTQS82Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = calculapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -480,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lavaspoon.calculapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spoonlava.calculapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
