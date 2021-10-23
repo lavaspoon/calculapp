@@ -47,8 +47,8 @@ class CalculateViewController: UIViewController {
         self.forms = data.compactMap{
             guard let title = $0["title"] as? String else { return nil }
             guard let money = $0["money"] as? Int else { return nil }
-            guard let done = $0["done"] as? Bool else { return nil }
-            return Form(title: title, money: money, done: done)
+            //guard let done = $0["done"] as? Bool else { return nil }
+            return Form(title: title, money: money, done: false)
         }
     }
     
@@ -86,7 +86,12 @@ extension CalculateViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let form = self.forms[indexPath.row]
         cell.textLabel?.text = form.title
-        cell.detailTextLabel?.text = ("\(form.money) 원")
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: form.money))
+        
+        cell.detailTextLabel?.text = ("\(result!) 원")
         if form.done {
             cell.accessoryType = .checkmark
         } else {
@@ -104,8 +109,15 @@ extension CalculateViewController : UITableViewDelegate {
         self.forms[indexPath.row] = form
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
         
+        if form.done {
+            calculated += form.money
+        } else {
+            calculated -= form.money
+        }
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: calculated))
         
-        calculated += form.money
-        self.calculatedView.text = String(calculated)
+        self.calculatedView.text = result
     }
 }
