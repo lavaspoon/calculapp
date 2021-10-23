@@ -11,7 +11,6 @@
         <!--정산-->
         <scene sceneID="qch-9B-aNa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aS0-ik-HHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="d52-ND-VQC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="정산" image="chart.bar.doc.horizontal.fill" catalog="system" id="X1u-FM-Evx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVg-DI-ESV">
@@ -22,6 +21,7 @@
                         <segue destination="eqa-s5-xex" kind="relationship" relationship="rootViewController" id="Qt2-BQ-qKd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aS0-ik-HHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="72" y="94"/>
         </scene>
@@ -35,9 +35,30 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-pw-4dQ">
                                 <rect key="frame" x="0.0" y="646" width="414" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DAg-0O-kEr">
+                                        <rect key="frame" x="361.5" y="10" width="42.5" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRi-xa-hI6">
+                                                <rect key="frame" x="0.0" y="0.0" width="13.5" height="29"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                                <color key="textColor" red="0.99607843139999996" green="0.64313725489999995" blue="0.26299924270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMF-qS-vaF">
+                                                <rect key="frame" x="21.5" y="0.0" width="21" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="05R-Zr-M03"/>
+                                    <constraint firstAttribute="trailing" secondItem="DAg-0O-kEr" secondAttribute="trailing" constant="10" id="70w-yg-9IO"/>
+                                    <constraint firstItem="DAg-0O-kEr" firstAttribute="top" secondItem="YpZ-pw-4dQ" secondAttribute="top" constant="10" id="Ahf-KF-XwA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qr-cR-SuS">
@@ -118,7 +139,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="VLv-LT-eqz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4m-Ts-LW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="Wxt-N8-xN1" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ps-kw-htZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -130,6 +150,7 @@
                         <segue destination="W2Z-29-5eN" kind="relationship" relationship="viewControllers" id="awl-hY-Ub1"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4m-Ts-LW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-751" y="94"/>
         </scene>
