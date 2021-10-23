@@ -9,5 +9,6 @@ import Foundation
 
 struct Form {
     var title : String
-    var money : String
+    var money : Int
+    var done : Bool
 }
