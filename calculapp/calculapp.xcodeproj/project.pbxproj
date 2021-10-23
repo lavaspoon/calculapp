@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9E4AC61E272462820077602D /* BtnDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AC61D272462820077602D /* BtnDesign.swift */; };
+		9E4AC622272478480077602D /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AC620272478480077602D /* NanumBarunpenB.ttf */; };
+		9E4AC623272478480077602D /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AC621272478480077602D /* NanumBarunpenR.ttf */; };
 		9ED3ADDD2722E36E006AF8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */; };
 		9ED3ADDF2722E36E006AF8B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */; };
 		9ED3ADE12722E36E006AF8B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADE02722E36E006AF8B8 /* ViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		9E4AC61D272462820077602D /* BtnDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnDesign.swift; sourceTree = "<group>"; };
+		9E4AC620272478480077602D /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.ttf; sourceTree = "<group>"; };
+		9E4AC621272478480077602D /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.ttf; sourceTree = "<group>"; };
 		9ED3ADD92722E36E006AF8B8 /* calculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		9E4AC61F272478250077602D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9E4AC620272478480077602D /* NanumBarunpenB.ttf */,
+				9E4AC621272478480077602D /* NanumBarunpenR.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		9ED3ADD02722E36E006AF8B8 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		9ED3ADDB2722E36E006AF8B8 /* calculapp */ = {
 			isa = PBXGroup;
 			children = (
+				9E4AC61F272478250077602D /* Fonts */,
 				9E4AC61C2724625C0077602D /* Style */,
 				9ED3AE0E2722E475006AF8B8 /* Model */,
 				9ED3AE0C2722E45F006AF8B8 /* View */,
@@ -277,6 +291,8 @@
 			files = (
 				9ED3ADE92722E371006AF8B8 /* LaunchScreen.storyboard in Resources */,
 				9ED3ADE62722E371006AF8B8 /* Assets.xcassets in Resources */,
+				9E4AC622272478480077602D /* NanumBarunpenB.ttf in Resources */,
+				9E4AC623272478480077602D /* NanumBarunpenR.ttf in Resources */,
 				9ED3ADE42722E36E006AF8B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

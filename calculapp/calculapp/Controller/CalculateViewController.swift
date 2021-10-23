@@ -76,11 +76,13 @@ class CalculateViewController: UIViewController {
         let cancleBtn = UIAlertAction(title: "취소", style: .default, handler: nil)
         alert.addAction(registBtn)
         alert.addAction(cancleBtn)
-        alert.addTextField(configurationHandler: { inputText in
-            inputText.placeholder = "정산항목을 입력하세요."
+        alert.addTextField(configurationHandler: { titleInputText in
+            titleInputText.placeholder = "정산항목을 입력하세요."
         })
-        alert.addTextField(configurationHandler: { inputText in
-            inputText.placeholder = "금액을 입력하세요."
+        alert.addTextField(configurationHandler: { moneyInputText in
+            moneyInputText.placeholder = "금액을 입력하세요."
+            moneyInputText.keyboardType = .numberPad
+            
         })
         self.present(alert, animated: true, completion: nil)
     }
@@ -90,7 +92,7 @@ class CalculateViewController: UIViewController {
         self.tableView.setEditing(true, animated: true)
     }
     @IBAction func tapCopyBtn(_ sender: UIButton) {
-        self.navigationItem.leftBarButtonItem = self.doneButton
+        
     }
 }
 
