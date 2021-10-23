@@ -11,7 +11,9 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calculatedView: UILabel!
     @IBOutlet weak var copyBtn: UIView!
+    @IBOutlet var editBtn: UIBarButtonItem!
     
+    var doneButton: UIBarButtonItem?
     var forms = [Form]() {
         didSet{
             self.saveData()
@@ -22,11 +24,20 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTap))
         copyBtn.layer.cornerRadius = 10
         print("CalculateViewController Load")
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.loadData()
+    }
+    
+    //done 버튼을 눌렀을때 실행됨
+    @objc func doneButtonTap(){
+        //edit 버튼으로 바꿈
+        self.navigationItem.leftBarButtonItem = self.editBtn
+        //편집창 닫음
+        self.tableView.setEditing(false, animated: true)
     }
     
     func saveData(){
@@ -75,6 +86,11 @@ class CalculateViewController: UIViewController {
     }
     
     @IBAction func tapEditBtn(_ sender: UIBarButtonItem) {
+        self.navigationItem.leftBarButtonItem = self.doneButton
+        self.tableView.setEditing(true, animated: true)
+    }
+    @IBAction func tapCopyBtn(_ sender: UIButton) {
+        self.navigationItem.leftBarButtonItem = self.doneButton
     }
 }
 
@@ -99,7 +115,31 @@ extension CalculateViewController : UITableViewDataSource {
         }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+       //선택한 항목을 배열에서 삭제
+       self.forms.remove(at: indexPath.row)
+       //선택한 항목을 테이블에서 삭제
+       tableView.deleteRows(at: [indexPath], with: .automatic)
+       
+       if self.forms.isEmpty {
+           self.doneButtonTap()
+       }
+   }
+   //특정 위치의 행을 재정렬 할 수 있는지 묻는 메서드
+   func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+       return true
+   }
+   //행이 다른 위치로 이동되면 어디에서 어디로 이동했는지 알려주는 메서드
+   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+       var forms  = self.forms
+       //선택한 데이터를 저장, sourceIndexPath.row : 이동할 셀 번호
+       let form = forms[sourceIndexPath.row]
+       forms.remove(at: sourceIndexPath.row)
+       //destinationIndexPath.row: 도착할 셀 위치
+       forms.insert(form, at: destinationIndexPath.row)
+       //배열 덮어쓰기
+       self.forms = forms
+   }
 }
 
 extension CalculateViewController : UITableViewDelegate {
