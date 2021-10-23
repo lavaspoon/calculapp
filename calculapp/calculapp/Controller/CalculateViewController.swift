@@ -10,13 +10,42 @@ import UIKit
 class CalculateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var forms = [Form]()
+    var forms = [Form]() {
+        didSet{
+            print("UserDefault Save")
+            self.saveData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("CalculateViewController Load")
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.loadData()
+    }
+    
+    func saveData(){
+        let data = self.forms.map {
+            [
+                "title" : $0.title,
+                "money" : $0.money,
+                "done"  : $0.done
+            ]
+        }
+        let UD = UserDefaults.standard
+        UD.set(data, forKey: "DataBox")
+    }
+    func loadData(){
+        let UD = UserDefaults.standard
+        //https://zeddios.tistory.com/153
+        guard let data = UD.object(forKey: "DataBox") as? [[String: Any]] else { return }
+        self.forms = data.compactMap{
+            guard let title = $0["title"] as? String else { return nil }
+            guard let money = $0["money"] as? Int else { return nil }
+            guard let done = $0["done"] as? Bool else { return nil }
+            return Form(title: title, money: money, done: done)
+        }
     }
     
     @IBAction func tapAddBtn(_ sender: UIBarButtonItem) {
