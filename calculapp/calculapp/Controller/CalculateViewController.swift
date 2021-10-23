@@ -9,16 +9,20 @@ import UIKit
 
 class CalculateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var calculatedView: UILabel!
+    @IBOutlet weak var copyBtn: UIView!
     
     var forms = [Form]() {
         didSet{
-            print("UserDefault Save")
             self.saveData()
         }
     }
     
+    var calculated : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        copyBtn.layer.cornerRadius = 10
         print("CalculateViewController Load")
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -99,5 +103,9 @@ extension CalculateViewController : UITableViewDelegate {
         form.done = !form.done
         self.forms[indexPath.row] = form
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+        
+        calculated += form.money
+        self.calculatedView.text = String(calculated)
     }
 }
