@@ -11,6 +11,7 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calculatedView: UILabel!
     @IBOutlet weak var copyBtn: UIView!
+    @IBOutlet weak var completeBtn: UIButton!
     @IBOutlet var editBtn: UIBarButtonItem!
     
     var doneButton: UIBarButtonItem?
@@ -90,6 +91,11 @@ class CalculateViewController: UIViewController {
     @IBAction func tapEditBtn(_ sender: UIBarButtonItem) {
         self.navigationItem.leftBarButtonItem = self.doneButton
         self.tableView.setEditing(true, animated: true)
+    }
+    //조건: 셀이 선택되어 있지 않으면 보이지 않거나, 비활성화 상태.
+    //액션: 해당 셀들의 글자가 회색 또는 수평한줄 처리.
+    @IBAction func tapCompleteBtn(_ sender: UIButton) {
+        
     }
     @IBAction func tapCopyBtn(_ sender: UIButton) {
         
