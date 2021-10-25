@@ -188,7 +188,7 @@
                     <connections>
                         <outlet property="calculatedView" destination="KRi-xa-hI6" id="Kwm-zc-hEn"/>
                         <outlet property="completeBtn" destination="a11-Wd-JMP" id="kAa-TT-Ctn"/>
-                        <outlet property="copyBtn" destination="YpZ-pw-4dQ" id="QaZ-48-W0R"/>
+                        <outlet property="copyBtn" destination="Kum-2F-jSV" id="fzu-TC-B6n"/>
                         <outlet property="editBtn" destination="5KB-AT-vN4" id="uLS-aN-jUB"/>
                         <outlet property="tableView" destination="AD6-5U-W1c" id="i1Z-YA-Tsu"/>
                     </connections>

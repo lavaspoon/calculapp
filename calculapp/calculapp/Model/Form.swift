@@ -11,4 +11,5 @@ struct Form {
     var title : String
     var money : Int
     var done : Bool
+    var complete : Bool
 }

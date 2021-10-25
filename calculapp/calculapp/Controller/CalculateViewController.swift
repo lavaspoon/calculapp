@@ -10,7 +10,7 @@ import UIKit
 class CalculateViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var calculatedView: UILabel!
-    @IBOutlet weak var copyBtn: UIView!
+    @IBOutlet weak var copyBtn: UIButton!
     @IBOutlet weak var completeBtn: UIButton!
     @IBOutlet var editBtn: UIBarButtonItem!
     
@@ -46,7 +46,8 @@ class CalculateViewController: UIViewController {
             [
                 "title" : $0.title,
                 "money" : $0.money,
-                "done"  : $0.done
+                "done"  : $0.done,
+                "complete" : $0.complete
             ]
         }
         let UD = UserDefaults.standard
@@ -60,7 +61,8 @@ class CalculateViewController: UIViewController {
             guard let title = $0["title"] as? String else { return nil }
             guard let money = $0["money"] as? Int else { return nil }
             //guard let done = $0["done"] as? Bool else { return nil }
-            return Form(title: title, money: money, done: false)
+            guard let complete = $0["complete"] as? Bool else { return nil }
+            return Form(title: title, money: money, done: false, complete: complete)
         }
     }
     
@@ -70,7 +72,7 @@ class CalculateViewController: UIViewController {
             
             guard let title = alert.textFields?[0].text else { return }
             guard let money = Int(alert.textFields?[1].text ?? "") else { return }
-            let form = Form(title: title, money: money, done: false)
+            let form = Form(title: title, money: money, done: false, complete: false)
             self?.forms.append(form)
             self?.tableView.reloadData()
         })
@@ -95,7 +97,15 @@ class CalculateViewController: UIViewController {
     //조건: 셀이 선택되어 있지 않으면 보이지 않거나, 비활성화 상태.
     //액션: 해당 셀들의 글자가 회색 또는 수평한줄 처리.
     @IBAction func tapCompleteBtn(_ sender: UIButton) {
-        
+        for i in 0..<forms.count {
+            //체크마크 된것만 정산완료 하기위해
+            if forms[i].done {
+                forms[i].complete = true
+                forms[i].done = !forms[i].done
+            }
+            print("테스트: \(forms[i].done),\(forms[i].complete)")
+        }
+        self.tableView.reloadData()
     }
     @IBAction func tapCopyBtn(_ sender: UIButton) {
         
@@ -116,11 +126,21 @@ extension CalculateViewController : UITableViewDataSource {
         let result = numberFormatter.string(from: NSNumber(value: form.money))
         
         cell.detailTextLabel?.text = ("\(result!) 원")
+        
         if form.done {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
         }
+        
+        if form.complete == true {
+            print("실행됨")
+            cell.detailTextLabel?.textColor = .gray
+            //cell.detailTextLabel?.attributedText = cell.detailTextLabel?.text?.strikeThrough()
+        } else if form.complete == false {
+            cell.detailTextLabel?.textColor = .black
+        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -153,9 +173,16 @@ extension CalculateViewController : UITableViewDataSource {
 extension CalculateViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var form = self.forms[indexPath.row]
+        
         form.done = !form.done
         self.forms[indexPath.row] = form
         self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        
+//        if form.complete == false {
+//            self.completeBtn.setTitle("정산취소", for: .normal)
+//        } else {
+//            self.completeBtn.setTitle("정산완료", for: .normal)
+//        }
         
         if form.done {
             calculated += form.money
@@ -169,3 +196,11 @@ extension CalculateViewController : UITableViewDelegate {
         self.calculatedView.text = result
     }
 }
+
+extension String {
+    func strikeThrough() -> NSAttributedString {
+        let attributeString = NSMutableAttributedString(string: self); attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length));
+        return attributeString
+    }
+}
+
