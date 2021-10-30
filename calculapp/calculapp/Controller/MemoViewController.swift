@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChartViewController: UIViewController {
+class MemoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

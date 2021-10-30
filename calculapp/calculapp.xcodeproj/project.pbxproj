@@ -10,6 +10,7 @@
 		9E4AC61E272462820077602D /* BtnDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AC61D272462820077602D /* BtnDesign.swift */; };
 		9E4AC622272478480077602D /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AC620272478480077602D /* NanumBarunpenB.ttf */; };
 		9E4AC623272478480077602D /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AC621272478480077602D /* NanumBarunpenR.ttf */; };
+		9E4AC63A272CDB180077602D /* MemoWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AC639272CDB180077602D /* MemoWriteViewController.swift */; };
 		9ED3ADDD2722E36E006AF8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */; };
 		9ED3ADDF2722E36E006AF8B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */; };
 		9ED3ADE12722E36E006AF8B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADE02722E36E006AF8B8 /* ViewController.swift */; };
@@ -20,7 +21,7 @@
 		9ED3ADFE2722E371006AF8B8 /* calculappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADFD2722E371006AF8B8 /* calculappUITests.swift */; };
 		9ED3AE002722E371006AF8B8 /* calculappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADFF2722E371006AF8B8 /* calculappUITestsLaunchTests.swift */; };
 		9ED3AE1027237ABE006AF8B8 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3AE0F27237ABE006AF8B8 /* CalculateViewController.swift */; };
-		9ED3AE1227237B27006AF8B8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3AE1127237B27006AF8B8 /* ChartViewController.swift */; };
+		9ED3AE1227237B27006AF8B8 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3AE1127237B27006AF8B8 /* MemoViewController.swift */; };
 		9ED3AE142723FEAC006AF8B8 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3AE132723FEAC006AF8B8 /* Form.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		9E4AC61D272462820077602D /* BtnDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnDesign.swift; sourceTree = "<group>"; };
 		9E4AC620272478480077602D /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.ttf; sourceTree = "<group>"; };
 		9E4AC621272478480077602D /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.ttf; sourceTree = "<group>"; };
+		9E4AC639272CDB180077602D /* MemoWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteViewController.swift; sourceTree = "<group>"; };
 		9ED3ADD92722E36E006AF8B8 /* calculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		9ED3ADFD2722E371006AF8B8 /* calculappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculappUITests.swift; sourceTree = "<group>"; };
 		9ED3ADFF2722E371006AF8B8 /* calculappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculappUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9ED3AE0F27237ABE006AF8B8 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
-		9ED3AE1127237B27006AF8B8 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		9ED3AE1127237B27006AF8B8 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		9ED3AE132723FEAC006AF8B8 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				9ED3AE0F27237ABE006AF8B8 /* CalculateViewController.swift */,
-				9ED3AE1127237B27006AF8B8 /* ChartViewController.swift */,
+				9ED3AE1127237B27006AF8B8 /* MemoViewController.swift */,
+				9E4AC639272CDB180077602D /* MemoWriteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,12 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4AC63A272CDB180077602D /* MemoWriteViewController.swift in Sources */,
 				9ED3ADE12722E36E006AF8B8 /* ViewController.swift in Sources */,
 				9ED3AE1027237ABE006AF8B8 /* CalculateViewController.swift in Sources */,
 				9E4AC61E272462820077602D /* BtnDesign.swift in Sources */,
 				9ED3ADDD2722E36E006AF8B8 /* AppDelegate.swift in Sources */,
 				9ED3ADDF2722E36E006AF8B8 /* SceneDelegate.swift in Sources */,
-				9ED3AE1227237B27006AF8B8 /* ChartViewController.swift in Sources */,
+				9ED3AE1227237B27006AF8B8 /* MemoViewController.swift in Sources */,
 				9ED3AE142723FEAC006AF8B8 /* Form.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

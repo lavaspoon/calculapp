@@ -233,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="71" y="822"/>
         </scene>
-        <!--Chart View Controller-->
+        <!--Memo View Controller-->
         <scene sceneID="g6Y-Bc-dSG">
             <objects>
-                <viewController id="WDB-W6-9xa" customClass="ChartViewController" customModule="calculapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WDB-W6-9xa" customClass="MemoViewController" customModule="calculapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MXO-DZ-iNb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="921.73913043478262" y="821.65178571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Memo Write View Controller-->
         <scene sceneID="LLK-UZ-6GU">
             <objects>
-                <viewController id="rmx-1H-q8y" sceneMemberID="viewController">
+                <viewController id="rmx-1H-q8y" customClass="MemoWriteViewController" customModule="calculapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WLG-1W-tet">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,6 +378,12 @@
                     <navigationItem key="navigationItem" id="XRc-VN-ejU">
                         <barButtonItem key="rightBarButtonItem" title="등록" id="toJ-jD-kXy"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="confirmButton" destination="toJ-jD-kXy" id="dkD-Ij-fkY"/>
+                        <outlet property="contentsTextView" destination="Nmu-4Z-GdD" id="1zO-wt-23U"/>
+                        <outlet property="dateTextField" destination="nrz-Kq-TQY" id="gWV-qC-C9m"/>
+                        <outlet property="titleTextField" destination="IyL-xv-lEp" id="Bw6-Jg-x54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRo-Hr-cbh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

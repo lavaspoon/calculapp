@@ -32,7 +32,6 @@ class CalculateViewController: UIViewController {
         self.tableView.delegate = self
         self.loadData()
     }
-    
     //done 버튼을 눌렀을때 실행됨
     @objc func doneButtonTap(){
         //edit 버튼으로 바꿈
