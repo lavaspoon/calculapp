@@ -20,8 +20,10 @@ class MemoWriteViewController: UIViewController {
 //MARK: VIEW LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.confirmButton.isEnabled = false
         configureContentsTextView() //contentsTextView 레이어 스타일
         configureDatePicker() //datePicker
+        configureInputField() //등록버튼 활성화/비활성화
     }
     
 //MARK: STYLE SETTING
@@ -54,5 +56,25 @@ class MemoWriteViewController: UIViewController {
         self.view.endEditing(true)
     }
 //MARK: ADD BUTTON SETTING
-    
+    private func configureInputField(){
+        //입력할때마다 validateInputField() 함수 실행
+        self.titleTextField.addTarget(self, action: #selector(titleTextFieldDidChanged(_:)), for: .editingChanged)
+        self.dateTextField.addTarget(self, action: #selector(dateTextFieldDidChanged(_:)), for: .editingChanged)
+        self.contentsTextView.delegate = self
+    }
+    private func validateInputField(){
+        self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.dateTextField.text?.isEmpty ?? true) && !(self.contentsTextView.text.isEmpty)
+    }
+    @objc private func titleTextFieldDidChanged(_ textField: UITextField){
+        self.validateInputField()
+    }
+    @objc private func dateTextFieldDidChanged(_ textField: UITextField) {
+        self.validateInputField()
+    }
+}
+extension MemoWriteViewController : UITextViewDelegate {
+//텍스트뷰의 텍스트가 입력될때 마다 호출되는 메서드
+    func textViewDidChange(_ textView: UITextView) {
+        self.validateInputField()
+    }
 }
