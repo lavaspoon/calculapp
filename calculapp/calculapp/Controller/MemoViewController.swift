@@ -11,7 +11,7 @@ class MemoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ChartViewController Load")
+        print("MemoViewController Load")
     }
     
 }

@@ -16,10 +16,14 @@ class MemoWriteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureContentsTextView() //contentsTextView 레이어 스타일
     }
     
 //MARK: STYLE SETTING
-
+    private func configureContentsTextView(){
+        self.contentsTextView.layer.borderColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0).cgColor
+        self.contentsTextView.layer.borderWidth = 1
+        self.contentsTextView.layer.cornerRadius = 5.0
+    }
 
 }
