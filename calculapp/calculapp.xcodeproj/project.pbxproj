@@ -11,6 +11,8 @@
 		9E4AC622272478480077602D /* NanumBarunpenB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AC620272478480077602D /* NanumBarunpenB.ttf */; };
 		9E4AC623272478480077602D /* NanumBarunpenR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E4AC621272478480077602D /* NanumBarunpenR.ttf */; };
 		9E4AC63A272CDB180077602D /* MemoWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AC639272CDB180077602D /* MemoWriteViewController.swift */; };
+		9E4AC63E272EE2040077602D /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AC63D272EE2040077602D /* Diary.swift */; };
+		9E4AC642272EE9AB0077602D /* DiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4AC641272EE9AB0077602D /* DiaryCell.swift */; };
 		9ED3ADDD2722E36E006AF8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */; };
 		9ED3ADDF2722E36E006AF8B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */; };
 		9ED3ADE12722E36E006AF8B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED3ADE02722E36E006AF8B8 /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 		9E4AC620272478480077602D /* NanumBarunpenB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenB.ttf; sourceTree = "<group>"; };
 		9E4AC621272478480077602D /* NanumBarunpenR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunpenR.ttf; sourceTree = "<group>"; };
 		9E4AC639272CDB180077602D /* MemoWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWriteViewController.swift; sourceTree = "<group>"; };
+		9E4AC63D272EE2040077602D /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		9E4AC641272EE9AB0077602D /* DiaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCell.swift; sourceTree = "<group>"; };
 		9ED3ADD92722E36E006AF8B8 /* calculapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED3ADDC2722E36E006AF8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ED3ADDE2722E36E006AF8B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		9ED3AE0C2722E45F006AF8B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9E4AC641272EE9AB0077602D /* DiaryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				9ED3AE132723FEAC006AF8B8 /* Form.swift */,
+				9E4AC63D272EE2040077602D /* Diary.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,8 +330,10 @@
 				9E4AC63A272CDB180077602D /* MemoWriteViewController.swift in Sources */,
 				9ED3ADE12722E36E006AF8B8 /* ViewController.swift in Sources */,
 				9ED3AE1027237ABE006AF8B8 /* CalculateViewController.swift in Sources */,
+				9E4AC642272EE9AB0077602D /* DiaryCell.swift in Sources */,
 				9E4AC61E272462820077602D /* BtnDesign.swift in Sources */,
 				9ED3ADDD2722E36E006AF8B8 /* AppDelegate.swift in Sources */,
+				9E4AC63E272EE2040077602D /* Diary.swift in Sources */,
 				9ED3ADDF2722E36E006AF8B8 /* SceneDelegate.swift in Sources */,
 				9ED3AE1227237B27006AF8B8 /* MemoViewController.swift in Sources */,
 				9ED3AE142723FEAC006AF8B8 /* Form.swift in Sources */,

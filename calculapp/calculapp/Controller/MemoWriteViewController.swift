@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol MemoWriteViewDelegate : AnyObject {
+    func didSelectRegister(diary : Diary)
+}
 class MemoWriteViewController: UIViewController {
 //MARK: OUTLET SETTING
     @IBOutlet weak var titleTextField: UITextField!
@@ -16,7 +19,9 @@ class MemoWriteViewController: UIViewController {
     
     private let datePicker = UIDatePicker()
     private var selectedDate : Date? = nil
-   
+    
+    weak var delegate : MemoWriteViewDelegate?
+    
 //MARK: VIEW LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +51,7 @@ class MemoWriteViewController: UIViewController {
         print("선택한 날짜: \(datePicker.date)")
         
         let trans = DateFormatter()
-        trans.dateFormat = "yy년 MM월 dd일(EEEEE)"
+        trans.dateFormat = "yyyy년 MM월 dd일(EEEEE)"
         trans.locale = Locale(identifier: "ko_KR")
         self.selectedDate = datePicker.date
         self.dateTextField.text = trans.string(from: datePicker.date)
@@ -71,7 +76,19 @@ class MemoWriteViewController: UIViewController {
     @objc private func dateTextFieldDidChanged(_ textField: UITextField) {
         self.validateInputField()
     }
-}
+//MARK: DELEGATE PATTERN - ADD BTN
+    @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
+        guard let title = self.titleTextField.text else { return }
+        guard let contents = self.contentsTextView.text else { return }
+        guard let date = self.selectedDate else { return }
+        
+        let diary = Diary(title: title, contents: contents, date: date, isStar: false)
+        //diary객체 전달
+        self.delegate?.didSelectRegister(diary: diary)
+        self.navigationController?.popViewController(animated: true)
+        }
+    }
+//MARK: ADD BUTTON SETTING
 extension MemoWriteViewController : UITextViewDelegate {
 //텍스트뷰의 텍스트가 입력될때 마다 호출되는 메서드
     func textViewDidChange(_ textView: UITextView) {
